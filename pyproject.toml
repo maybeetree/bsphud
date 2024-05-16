@@ -9,7 +9,7 @@ description = """Desktop switcher popup for BSPWM"""
 authors = [
 	{name = "maybetree", email = "maybetree48@gmail.com"}
 	]
-license = { text = "I haven't decided yet" }
+license = { file = "LICENSE.txt" }
 readme = "README.md"
 classifiers = [
 	'Programming Language :: Python :: 3',

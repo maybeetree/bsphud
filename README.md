@@ -2,6 +2,9 @@
 
 Desktop switcher popup for [bspwm](https://github.com/baskerville/bspwm).
 
+- PyPI: <https://pypi.org/project/bsphud/>
+- GitHub: <https://github.com/maybeetree/bsphud>
+
 ![BSPHUD screenshot](img/bsphud-scrot.png)
 
 BSPHUD is a window that pops up in the middle of your screen
@@ -105,14 +108,14 @@ Since the window is unmanaged, the border
 is actually drawn by BSPHUD itself,
 not by bspwm.
 BSPHUD queries your preferred border width and color
-using `bspc query`.
+using `bspc config`.
 
 - If you plan to run multiple instances of BSPHUD
 (e.g. multiuser system),
 it is wise to change the location of the PID file.
 For example:
 ```
-python -m bsphud.py --pidfile /var/run/user/$(id -u)/bsphud.pid
+python -m bsphud --pidfile /var/run/user/$(id -u)/bsphud.pid
 ```
 
 - bug: If you send a SIGUSR signal to BSPHUD immediately after

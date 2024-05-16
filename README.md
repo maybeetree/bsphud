@@ -98,9 +98,14 @@ super + {_,shift} + {comma,period}
 
 ## Misc notes
 
-- there needs to be a rule that tells BSPWM to not manage
+- there needs to be a rule that tells bspwm to not manage
 the BSPHUD window.
 BSPHUD creates this rule automatically.
+Since the window is unmanaged, the border
+is actually drawn by BSPHUD itself,
+not by bspwm.
+BSPHUD queries your preferred border width and color
+using `bspc query`.
 
 - If you plan to run multiple instances of BSPHUD
 (e.g. multiuser system),

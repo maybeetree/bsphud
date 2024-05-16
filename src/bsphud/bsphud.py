@@ -28,9 +28,12 @@ class BSPHUD:
             '*:*:BSPHUD',
             'manage=off'
             ])
+        
+        self.get_border()
 
         self.root = tk.Tk()
         self.root.title("BSPHUD")
+        self.root.configure(background=self.border_color)
         self.hide()
         self.canvas = tk.Canvas(self.root)
         self.canvas.pack()
@@ -45,6 +48,13 @@ class BSPHUD:
 
         self.desktops = []
         self.focused = -1
+
+    def get_border(self):
+        self.border_color = subprocess.check_output([
+            'bspc', 'config', 'focused_border_color'
+            ]).decode('utf-8').upper().strip()
+        self.border_width = int(subprocess.check_output([
+            'bspc', 'config', 'border_width']).decode('utf-8'))
 
     def mainloop(self):
         self.root.mainloop()
@@ -124,6 +134,9 @@ class BSPHUD:
             height=win_height,
             )
 
+        self.win_width = win_width
+        self.win_height = win_height
+
     def draw(self):
         self.canvas.delete("all")
 
@@ -161,6 +174,14 @@ class BSPHUD:
                     fill=None,
                     width=self.line_width,
                     )
+
+            self.canvas.create_rectangle(
+                (0, 0),
+                (self.win_width, self.win_height),
+                fill=None,
+                width=self.border_width * 4,
+                outline=self.border_color,
+                )
 
 def make_pidfile(path):
     path.write_text(str(os.getpid()))

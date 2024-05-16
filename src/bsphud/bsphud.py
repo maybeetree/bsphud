@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import signal
 import os
 import argparse
@@ -59,7 +61,7 @@ class BSPHUD:
         # Sometimes, when the window appears,
         # it causes the focused node to become unfocused.
         # The bellow command fixes it by focusing the focused node.
-        subprocess.check_output([
+        subprocess.run([
             'bspc',
             'node',
             '-f',

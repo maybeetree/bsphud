@@ -69,11 +69,11 @@ Below is an example configuration with
 ```sxhkdrc
 
 # Show BSPHUD when left super is held down
-Super_L
+Super_L + any
 	kill -10 $(cat /tmp/bsphud.pid)
 
 # Hide BSPHUD when left super is released
-@Super_L
+@Super_L + any
 	kill -12 $(cat /tmp/bsphud.pid)
 
 # If you have something like this

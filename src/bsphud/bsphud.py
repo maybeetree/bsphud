@@ -62,6 +62,7 @@ class BSPHUD:
     def show(self):
         self.shown = True
         self.root.deiconify()
+        self.root.lift()
         self.root.update()
 
     def hide(self):

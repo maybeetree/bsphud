@@ -33,8 +33,15 @@ pip install bsphud
 And then launch BSPHUD like so:
 
 ```
+bsphud
+```
+
+or
+
+```
 python -m bsphud
 ```
+
 
 Or you can simply copy [src/bsphud/bsphud.py](src/bsphud/bsphud.py)
 to a safe location and run it with Python:
@@ -54,6 +61,9 @@ Tkinter is usually included with Python,
 but sometimes it's not,
 for example on minimal systems or if you compiled Python
 yourself and didn't explicitly enable Tkinter.
+
+If you're on Alpine linux, tkinter can be installed with
+`apk add python3-tkinter`.
 
 ## Configuration
 

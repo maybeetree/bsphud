@@ -10,4 +10,5 @@ dist
 *.old
 *.log
 venv
+venv.*
 

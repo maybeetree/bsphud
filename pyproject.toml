@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bsphud"
-version = "1.0.4"
+version = "1.0.5"
 description = """Desktop switcher popup for BSPWM"""
 authors = [
 	{name = "maybetree", email = "maybetree48@proton.me"}
@@ -18,6 +18,6 @@ requires-python = ">=3"
 dependencies = [
 	]
 
-#[tool.setuptools.packages.find]
-#include = [ "pycif", "pycif.*" ]
+[project.scripts]
+bsphud = "bsphud:run"
 
